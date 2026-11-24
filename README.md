@@ -40,11 +40,11 @@ An interactive Power BI dashboard created to present job market insights and car
 
 ### Dashboard Preview
 
-![Dashboard Page 1](03_POWER_BI/page1.png)
+![Dashboard Page 1](04_WEBSITE/images/page1.png)
 
-![Dashboard Page 2](03_POWER_BI/page2.png)
+![Dashboard Page 2](04_WEBSITE/images/page2.png)
 
-![Dashboard Page 3](03_POWER_BI/page3.png)
+![Dashboard Page 3](04_WEBSITE/images/page3.png)
 
 ### 5. Web Application
 A Flask-based career assessment and salary prediction application.
