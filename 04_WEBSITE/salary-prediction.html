@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathora Salary Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f0ff;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #593b91;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 11px;
+            margin-top: 7px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #6845a5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-top: 22px;
+            cursor: pointer;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Pathora Intelligence</h1>
+    <h2>Salary Band Prediction</h2>
+
+    <form id="predictionForm">
+
+        <label>Job Role</label>
+        <input type="text" id="role" placeholder="Example: data" required>
+
+        <label>Seniority</label>
+        <select id="seniority" required>
+            <option value="entry">Entry</option>
+            <option value="intern">Intern</option>
+            <option value="mid">Mid</option>
+            <option value="senior">Senior</option>
+            <option value="lead">Lead</option>
+            <option value="manager">Manager</option>
+            <option value="executive">Executive</option>
+            <option value="director">Director</option>
+            <option value="Unknown">Unknown</option>
+        </select>
+
+        <label>City</label>
+        <input type="text" id="city" placeholder="Example: Chennai" required>
+
+        <label>Region</label>
+        <input type="text" id="region" placeholder="Example: Tamil Nadu" required>
+
+        <label>Country</label>
+        <select id="country" required>
+            <option value="IN">India (IN)</option>
+            <option value="US">United States (US)</option>
+        </select>
+
+        <label>Work Mode</label>
+        <select id="remote" required>
+            <option value="onsite">On-site</option>
+            <option value="remote">Remote</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="Unknown">Unknown</option>
+        </select>
+
+        <label>Experience (Years)</label>
+        <input type="number" id="experience_years"
+               min="0" step="0.1" required>
+
+        <button type="submit">Predict Salary Band</button>
+
+    </form>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+document.getElementById("predictionForm").addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const data = {
+        role: document.getElementById("role").value.trim(),
+        seniority: document.getElementById("seniority").value,
+        city: document.getElementById("city").value.trim(),
+        region: document.getElementById("region").value.trim(),
+        country: document.getElementById("country").value,
+        remote: document.getElementById("remote").value,
+        experience_years: document.getElementById("experience_years").value
+    };
+
+    const result = document.getElementById("result");
+    result.textContent = "Predicting...";
+
+    try {
+        const response = await fetch("/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const output = await response.json();
+
+        if (!response.ok) {
+            throw new Error(output.error || "Prediction failed");
+        }
+
+        result.textContent = "Predicted Salary Band: " + output.prediction;
+
+    } catch (error) {
+        result.textContent = "Error: " + error.message;
+    }
+
+});
+</script>
+
+</body>
+</html>

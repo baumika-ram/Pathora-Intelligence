@@ -1,0 +1,97 @@
+/* Main Page */
+body {
+    font-family: Arial, sans-serif;
+    background: #f3efff;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+}
+
+/* Main Heading */
+h1, h2 {
+    color: #542c91;
+    text-align: center;
+}
+
+/* Description */
+p {
+    text-align: center;
+    color: #666;
+}
+
+/* Form Container */
+form {
+    background: white;
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #542c91;
+}
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d6cbea;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #7044b5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #542c91;
+}
+
+/* Results */
+#result {
+    max-width: 650px;
+    margin: 30px auto;
+}
+
+/* Individual Career Cards */
+.career-result {
+    background: white;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border-left: 5px solid #7044b5;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.career-result h3 {
+    color: #542c91;
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    form {
+        padding: 20px;
+    }
+}

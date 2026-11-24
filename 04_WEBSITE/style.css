@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f3ff;
+    color: #25213b;
+    line-height: 1.6;
+}
+
+header {
+    background: #4c348c;
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+nav {
+    background: white;
+    padding: 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4c348c;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #9b70d6;
+}
+
+section {
+    background: white;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+section h2 {
+    color: #4c348c;
+    margin-bottom: 12px;
+}
+
+footer {
+    background: #302052;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+section p {
+    color: #625d70;
+    font-size: 16px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 5px;
+}
+
+header h1 {
+    letter-spacing: 1px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.dashboard-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.dashboard-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ddd6f3;
+    margin-top: 10px;
+}
+
+.dashboard-gallery h3 {
+    color: #4c348c;
+    margin-top: 15px;
+}
+
+ul {
+    padding-left: 25px;
+    margin-top: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #ddd6f3;
+}
+
+th {
+    background-color: #4c348c;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f3ff;
+}
+
+h3 {
+    color: #4c348c;
+    margin-top: 25px;
+}
